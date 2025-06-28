@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 520px;
+    height: 600px;
+    background-color: #EEEEEE;
+    border-radius: 12px;
+    padding: 28px;
+}
+
+.container .title {
+    font-family: sans-serif;
+    color: #323B57;
+}
+
+.container .input-container {
+    width: 100%;
+    height: 52px;
+    background-color: #D4DDEA;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 16px;
+    border-radius: 26px;
+    margin: 20px 0px;
+}
+
+.container .input-container .todo-input {
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.container .input-container .todo-input:focus {
+    outline: none;
+}
+
+.container .input-container .todo-add-btn {
+    width: 30%;
+    height: 52px;
+    background-color: #FF5941;
+    border: none;
+    border-radius: 26px;
+    color: white;
+    font-weight: bolder;
+}
+
+.container .todos-container {
+    height: 410px;
+    display: flex;
+    row-gap: 10px;
+    overflow-y: scroll;
+    flex-direction: column;
+}
+
+.container .todos-container .todos-container-item {
+    flex-shrink: 0;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container .todos-container input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+}
+
+.container .todos-container .todo-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #737373;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.container .todos-container input[type=checkbox]:checked + .todo-checkbox {
+    background-color: #FF5941;
+}
+
+.container .todos-container input[type=checkbox]:checked + .todo-checkbox::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-radius: 1px;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.container .todos-container .todos-container-item .todo-text {
+    width: 84%;
+    font-family: sans-serif;
+    color: #737373;
+}
+
+.container .todos-container .todos-container-item .checked {
+    text-decoration: line-through;
+    color: #b2b2b2;
+}
+
+.container .todos-container .todos-container-item .todo-delete-btn {
+    border: none;
+    background-color: transparent;
+    color: #959595;
+    font-size: 18px;
+}
+
